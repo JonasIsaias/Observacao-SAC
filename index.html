@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observação SAC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Gerador de Observação - SAC</h2>
+
+        <!-- Formulário -->
+        <form id="form">
+            <label>Nome do Beneficiário *</label>
+            <input type="text" id="nome" class="obrigatorio" required>
+
+            <label>Tipo *</label>
+            <select id="tipo" class="obrigatorio" required>
+                <option value="">Selecione</option>
+                <option value="Titular">Titular</option>
+                <option value="Dependente">Dependente</option>
+                <option value="Representante">Representante</option>
+            </select>
+
+            <label>Classificação da Demanda *</label>
+            <select id="classificacao" class="obrigatorio" required onchange="verificarClassificacao()">
+                <option value="">Selecione</option>
+                <option value="Reclama">Reclama</option>
+                <option value="Solicita">Solicita</option>
+                <option value="Elogia">Elogia</option>
+                <option value="Sugere">Sugere</option>
+                <option value="Informa">Informa</option>
+                <option value="Atendimento Rápido">Atendimento Rápido</option>
+            </select>
+
+            <div id="alertaRapido" class="alerta-visivel" style="display: none;">
+                ⚠️ Atendimento Rápido exige descrição da situação ocorrida.
+            </div>
+
+            <div id="explicacaoFlags" class="explicacao-flags">
+                <strong>Em que momento utilizar cada flag?</strong>
+                <ul>
+                    <li><strong>Cliente Alterado:</strong> comportamento exaltado ou fora do tom.</li>
+                    <li><strong>Situação Urgente:</strong> risco à saúde ou emergência.</li>
+                    <li><strong>Ameaça NIP / Liminar?:</strong> menção à ANS ou judicialização.</li>
+                </ul>
+                <img src="Imagem_flag.jpg" alt="Flags no SIGO" style="max-width: 300px;">
+            </div>
+
+            <label>Como e por que aconteceu? *</label>
+            <textarea id="descricao" class="obrigatorio" rows="3" required oninput="mostrarExemplo()"></textarea>
+            <div id="exemploDescricao" class="instrucoes">
+                <strong>Exemplo:</strong><br>
+                “Cliente relatou que no dia 10/04, ao tentar agendar consulta pelo aplicativo, o sistema apresentou erro e impediu o agendamento.”
+            </div>
+
+            <label>Onde aconteceu? Local/Região/Cidade</label>
+            <input type="text" id="local">
+
+            <label>Quando aconteceu? Data</label>
+            <input type="date" id="data">
+
+            <label>Quando aconteceu? Horário</label>
+            <input type="text" id="horario" placeholder="Ex: 14h30, manhã, início da tarde">
+
+            <!-- Lembrete final -->
+            <div class="lembrete-flags">
+                ⚠️ Não esqueça de <strong>flegar no SIGO</strong> quando o beneficiário estiver atritado!
+            </div>
+
+            <br><br>
+            <button type="button" onclick="validarFormulario()">Gerar Frase</button>
+            <button type="button" onclick="limparCampos()">Limpar Campos</button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+
+        <button id="copiar" onclick="copiarFrase()" style="display:none;">Copiar Frase</button>
+
+        <h3>Histórico de Observações</h3>
+        <ul id="historico"></ul>
+
+        <button onclick="limparHistorico()">Limpar Histórico</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

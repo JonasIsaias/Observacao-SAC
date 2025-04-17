@@ -1,0 +1,206 @@
+/* Resetando alguns estilos padrão para consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Configuração do body */
+body {
+    background-color: #f4f8fb;  /* Azul claro */
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Título */
+h2 {
+    color: #0056b3;  /* Azul escuro */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Caixas de formulário e labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #0056b3;
+}
+
+/* Inputs, selects e textarea */
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #d1e7fd;  /* Azul bem claro */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+/* Foco nos campos */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #ffb74d;  /* Laranja claro */
+}
+
+/* Botão "Gerar Frase" */
+button {
+    background-color: #ffb74d;  /* Laranja claro */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 48%;
+    margin-right: 4%;
+}
+
+button:hover {
+    background-color: #ff9800;  /* Laranja mais forte */
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Alerta de "Atendimento Rápido" */
+#alertaRapido {
+    background-color: #ffcc00;  /* Amarelo claro */
+    color: #333;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Explicação de flags */
+#explicacaoFlags {
+    background-color: #e7f3ff;  /* Azul bem claro */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+    border: 1px solid #d1e7fd;
+}
+
+#explicacaoFlags ul {
+    margin-top: 10px;
+}
+
+#explicacaoFlags li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Campo de descrição de exemplo */
+#exemploDescricao {
+    background-color: #eaf6ff;  /* Azul bem claro */
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    border: 1px solid #d1e7fd;
+}
+
+/* Lembrete de flags */
+.lembrete-flags {
+    background-color: #f8d7da;  /* Laranja claro */
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Área de Resultado */
+#resultado {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #eaf6ff;  /* Azul claro */
+    color: #0056b3;
+    border: 1px solid #007bff;  /* Azul forte */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Botão de copiar */
+#copiar {
+    background-color: #ffb74d;  /* Laranja claro */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 48%;
+    margin-left: 4%;
+}
+
+#copiar:hover {
+    background-color: #ff9800;  /* Laranja mais forte */
+}
+
+/* Histórico */
+#historico {
+    list-style-type: none;
+    margin-top: 30px;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+#historico li {
+    background-color: #ffffff;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #resultado, #historico {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+}
