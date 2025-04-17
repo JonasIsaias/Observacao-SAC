@@ -13,10 +13,10 @@
 
         <!-- Formulário -->
         <form id="form">
-            <label>Nome do Beneficiário *</label>
+            <label>Qual o nome do Beneficiario(a)? *</label>
             <input type="text" id="nome" class="obrigatorio" required>
 
-            <label>Tipo *</label>
+            <label>É titular, dependente ou representante? *</label>
             <select id="tipo" class="obrigatorio" required>
                 <option value="">Selecione</option>
                 <option value="Titular">Titular</option>
@@ -24,7 +24,7 @@
                 <option value="Representante">Representante</option>
             </select>
 
-            <label>Classificação da Demanda *</label>
+            <label>Qual a classificação da demanda? *</label>
             <select id="classificacao" class="obrigatorio" required onchange="verificarClassificacao()">
                 <option value="">Selecione</option>
                 <option value="Reclama">Reclama</option>
@@ -44,22 +44,22 @@
                 <ul>
                     <li><strong>Cliente Alterado:</strong> comportamento exaltado ou fora do tom.</li>
                     <li><strong>Situação Urgente:</strong> risco à saúde ou emergência.</li>
-                    <li><strong>Ameaça NIP / Liminar?:</strong> menção à ANS ou judicialização.</li>
+                    <li><strong>Ameaça NIP / Liminar?:</strong> menção à ANS, NIP ou Liminar.</li>
                 </ul>
                 <img src="Imagem_flag.jpg" alt="Flags no SIGO" style="max-width: 300px;">
             </div>
 
-            <label>Como e por que aconteceu? *</label>
+            <label>Como e por que aconteceu ou precisa? (Descreva de forma objetiva) *</label>
             <textarea id="descricao" class="obrigatorio" rows="3" required oninput="mostrarExemplo()"></textarea>
             <div id="exemploDescricao" class="instrucoes">
                 <strong>Exemplo:</strong><br>
                 “Cliente relatou que no dia 10/04, ao tentar agendar consulta pelo aplicativo, o sistema apresentou erro e impediu o agendamento.”
             </div>
 
-            <label>Onde aconteceu? Local/Região/Cidade</label>
+            <label>Onde aconteceu ou precisa? Local/Região/Cidade</label>
             <input type="text" id="local">
 
-            <label>Quando aconteceu? Data</label>
+            <label>Quando aconteceu ou precisa? Data</label>
             <input type="date" id="data">
 
             <label>Quando aconteceu? Horário</label>
